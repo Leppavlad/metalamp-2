@@ -1,0 +1,14 @@
+include components/button/button
+include components/checkbox/checkbox
+
+doctype html
+html(lang="en")
+  head
+    include includes/head-content
+    title Metalamp
+  body 
+    h1 Some title
+    
+    +checkbox({class: "checkbox"})
+    +button({text: "Some button"})
+    include includes/body-scripts

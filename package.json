@@ -1,0 +1,22 @@
+{
+  "name": "task2",
+  "version": "0.1.0",
+  "description": "Layout practice. Metalamp",
+  "scripts": {
+    "dev": "parcel src/index.pug",
+    "build": "parcel build src/index.pug"
+  },
+  "keywords": [
+    "parcel",
+    "pug",
+    "ts",
+    "scss"
+  ],
+  "author": "Vladislav Leppa <leppavlad@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-pug": "^2.0.1",
+    "@parcel/transformer-sass": "^2.0.1",
+    "parcel": "^2.0.1"
+  }
+}
