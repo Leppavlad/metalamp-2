@@ -1,2 +1,12 @@
 mixin button(options)
-  button= options.text 
+  - 
+    const { text, mode = "fill", color = "main" } = options;
+    const classList = {
+      "button": true, 
+      "button_filled": mode === "fill",
+      "button_void": mode === "void",
+      "button_flat": mode === "flat",
+      "button_main": color === "main",
+      "button_alt": color === "alt",
+      };
+  button(class = classList)= text 

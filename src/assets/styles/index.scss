@@ -1,0 +1,16 @@
+@import "./variables";
+
+@import url("../../components/button/button.scss");
+@import url("../../components/checkbox/checkbox.scss");
+
+html {
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark75;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: $dark;
+}

@@ -1,3 +1,45 @@
-button {
-  background-color: var(--purple);
+@import "../../assets/styles/variables";
+
+.button {
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &:not(.button-flat) {
+    height: 44px;
+    padding: 0 20px;
+    border-radius: 50px;
+  }
+  &_filled {
+    border: none;
+    color: #fff;
+  }
+  &_filled.button_main {
+    background: linear-gradient($purple, $purple-alt);
+  }
+  &_filled.button_alt {
+    background: linear-gradient($green, $green-alt);
+  }
+
+  &_void {
+    border-width: 2px;
+    border-style: solid;
+    background: none;
+  }
+  &_void.button_main {
+    border-color: $purple;
+    color: $purple;
+  }
+  &_void.button_alt {
+    border-color: $green;
+    color: $green;
+  }
+
+  &_flat {
+    color: $purple;
+    border: none;
+    background: none;
+  }
+  
+
+
 }
