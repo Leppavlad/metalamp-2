@@ -1,6 +1,11 @@
 mixin button(options)
   - 
-    const { text, mode = "fill", color = "main" } = options;
+    const { 
+      text, 
+      content, 
+      mode = "fill", 
+      color = "main" 
+      } = options;
     const classList = {
       "button": true, 
       "button_filled": mode === "fill",
@@ -9,4 +14,16 @@ mixin button(options)
       "button_main": color === "main",
       "button_alt": color === "alt",
       };
-  button(class = classList)= text 
+  case content
+    when "arrow-left"
+      button(class = classList, class = ["button_controller", "button_controller-left"]) 
+        img(src="assets/icons/arrow_back.svg", alt="")
+    when "arrow-right"
+      button(class = classList, class = ["button_controller", "button_controller-right"])
+        img(src="assets/icons/arrow_forward.svg", alt="")
+    when "with-arrow"
+      button(class = classList, class = "button_with-arrow")
+        p= text
+        include ../../assets/icons/arrow_forward.svg
+    default
+      button(class = classList)= text 

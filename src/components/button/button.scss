@@ -1,15 +1,26 @@
 @import "../../assets/styles/variables";
 
+@mixin pretty {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 50px;
+}
+
 .button {
+  display: inline-block;
   text-transform: uppercase;
   font-weight: bold;
+  cursor: pointer;
 
-  &:not(.button-flat) {
-    height: 44px;
-    padding: 0 20px;
-    border-radius: 50px;
+  &:hover {
+    opacity: 0.5;
   }
+  &:active {
+    transform: translate(1px, 1px);
+  }
+
   &_filled {
+    @include pretty;
     border: none;
     color: #fff;
   }
@@ -21,6 +32,7 @@
   }
 
   &_void {
+    @include pretty;
     border-width: 2px;
     border-style: solid;
     background: none;
@@ -40,6 +52,36 @@
     background: none;
   }
   
+  &_controller {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+  }
 
+  &_with-arrow {
+    position: relative;
+    padding: 0 40px;
+    width: 100%;
 
+    svg {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+    }
+
+    &.button_void,
+    &.button_flat {
+      &.button_main {
+        svg path {
+          fill: $purple;
+        }
+      }
+      &.button_alt {
+        svg path {
+          fill: $green;
+        }
+      }
+       
+    }
+  }
 }
