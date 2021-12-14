@@ -1,5 +1,7 @@
 include components/button/button
+include components/input/input
 include components/checkbox/checkbox
+include components/radio/radio
 
 doctype html
 html(lang="en")
@@ -9,14 +11,45 @@ html(lang="en")
   body 
     h1 Some title
     
-    +checkbox({class: "checkbox"})
-    +button({text: "Some button", mode: "fill", color: "main"})
-    +button({text: "Some button", mode: "void", color: "main"})
-    +button({text: "Some button", mode: "flat", color: "main"})
-    +button({content: "arrow-left", mode: "fill", color: "main"})
-    +button({content: "arrow-right", mode: "fill", color: "alt"})
-    +button({content: "with-arrow", text: "перейти к оплате", mode: "fill", color: "alt"})
-    +button({content: "with-arrow", text: "перейти к оплате", mode: "flat", color: "main"})
-    +button({content: "with-arrow", text: "перейти к оплате", mode: "void", color: "main"})
+    div 
+      h3 Buttons
+      +button({text: "Some button", mode: "fill", color: "main"})
+      +button({text: "Some button", mode: "void", color: "main"})
+      +button({text: "Some button", mode: "flat", color: "main"})
+      +button({content: "arrow-left", mode: "fill", color: "main"})
+      +button({content: "arrow-right", mode: "fill", color: "alt"})
+      +button({content: "with-arrow", text: "перейти к оплате", mode: "fill", color: "alt"})
+      +button({content: "with-arrow", text: "перейти к оплате", mode: "flat", color: "main"})
+      +button({content: "with-arrow", text: "перейти к оплате", mode: "void", color: "main"})
+
+    div 
+      h3 Input
+      +input({value: "", placeholder: "Input something"})
+
+    div 
+      h3 Select
+      +input({
+        type: "select", 
+        name: "guests",
+        values: {
+          1: 1,
+          2: 2,
+          3: 3,
+        }, 
+        placeholder: "How many guests expected?"
+        })
+    +input({type: "subscribe", value: "", placeholder: "Input something"})
+    
+    div 
+      h3 Checkbox
+      div(class="checkbox__wrapper")
+        +checkbox({ label: "Allowed to smoke inside", name: "smoking" })
+        +checkbox({ label: "Allowed to drink inside", name: "drinking" })
+        +checkbox({ label: "Allowed to gamble inside", name: "gambling" })
+
+    div
+      h3 Radio
+      div(class="radio__wrapper")
+        +radio({values: { man: "Мужчина", woman: "Женщина" }, name: "gender"})
 
     include includes/body-scripts

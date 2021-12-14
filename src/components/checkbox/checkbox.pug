@@ -1,2 +1,8 @@
 mixin checkbox(options)
-  input(type="checkbox", name="")
+  - const { label, name } = options;
+
+  label(class = "custom-checkbox")
+    input(type="checkbox", name = name)
+    div(class = "custom-checkbox__model")
+      include ../../assets/icons/check.svg
+    div(class = "custom-checkbox__label")= label

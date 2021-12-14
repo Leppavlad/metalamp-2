@@ -1,0 +1,31 @@
+mixin input(options)
+  -
+    const { 
+      type = "text",
+      name, 
+      value,
+      values,
+      placeholder 
+      } = options;
+    const classList = {};
+
+  case type
+    when "subscribe"
+      input(
+        type = "text",
+        class = classList, class = ["input_subscribe"]
+        value = value, 
+        placeholder = placeholder
+        )
+    when "select"
+      select(name = name, class = classList, class = ["input_select"])
+        option(value="null", disabled = "true" selected = "true")= placeholder 
+        each value, index in values
+          option(value = value)= index
+    default
+      input(
+        type = "text",
+        class = classList, 
+        value = value, 
+        placeholder = placeholder
+        )

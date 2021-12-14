@@ -1,4 +1,36 @@
-input[type=checkbox] {
-  width: 30px;
-  height: 30px;
+@import "../../assets/styles/variables";
+
+.custom-checkbox {
+  display: flex;
+  padding: 5px 0;
+  cursor: pointer;
+  user-select: none;
+
+  input {
+    display: none;
+  }
+
+  input:checked ~ &__model svg {
+    display: block;
+  }
+
+  &__model {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid $dark25;
+    margin-right: 10px;
+
+    svg {
+      display: none;
+      fill: $purple;
+    }
+  }
+
+  &__label {
+    flex: 1 0 150px;
+  }
 }
