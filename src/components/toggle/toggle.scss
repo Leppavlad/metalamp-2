@@ -1,0 +1,45 @@
+@import "../../assets/styles/variables";
+
+* + .custom-toggle {
+  margin-top: 14px;
+}
+
+.custom-toggle {
+  display: flex;
+  cursor: pointer;
+  user-select: none;
+
+  input {
+    display: none;
+  }
+
+  input:checked ~ &__model::after {
+    transform: translateX(20px);
+    background-color: $purple;
+    transition: transform .3s;
+  }
+
+  &__model {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid $dark25;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: $dark25;
+      transition: transform .5s;
+    }
+  }
+
+  &__label {
+    margin-left: 14px;
+  }
+}

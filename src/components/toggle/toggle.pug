@@ -1,0 +1,7 @@
+mixin toggle(options)
+  - const { name, label } = options;
+
+  label(class = "custom-toggle")
+    input(type = "checkbox", name = name)
+    div(class = "custom-toggle__model")
+    div(class = "custom-toggle__label")= label

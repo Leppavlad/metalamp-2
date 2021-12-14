@@ -2,6 +2,7 @@ include components/button/button
 include components/input/input
 include components/checkbox/checkbox
 include components/radio/radio
+include components/toggle/toggle
 
 doctype html
 html(lang="en")
@@ -11,34 +12,34 @@ html(lang="en")
   body 
     h1 Some title
     
-    div 
-      h3 Buttons
-      +button({text: "Some button", mode: "fill", color: "main"})
-      +button({text: "Some button", mode: "void", color: "main"})
-      +button({text: "Some button", mode: "flat", color: "main"})
-      +button({content: "arrow-left", mode: "fill", color: "main"})
-      +button({content: "arrow-right", mode: "fill", color: "alt"})
-      +button({content: "with-arrow", text: "перейти к оплате", mode: "fill", color: "alt"})
-      +button({content: "with-arrow", text: "перейти к оплате", mode: "flat", color: "main"})
-      +button({content: "with-arrow", text: "перейти к оплате", mode: "void", color: "main"})
+    //- div 
+    //-   h3 Buttons
+    //-   +button({text: "Some button", mode: "fill", color: "main"})
+    //-   +button({text: "Some button", mode: "void", color: "main"})
+    //-   +button({text: "Some button", mode: "flat", color: "main"})
+    //-   +button({content: "arrow-left", mode: "fill", color: "main"})
+    //-   +button({content: "arrow-right", mode: "fill", color: "alt"})
+    //-   +button({content: "with-arrow", text: "перейти к оплате", mode: "fill", color: "alt"})
+    //-   +button({content: "with-arrow", text: "перейти к оплате", mode: "flat", color: "main"})
+    //-   +button({content: "with-arrow", text: "перейти к оплате", mode: "void", color: "main"})
 
-    div 
-      h3 Input
-      +input({value: "", placeholder: "Input something"})
+    //- div 
+    //-   h3 Input
+    //-   +input({value: "", placeholder: "Input something"})
 
-    div 
-      h3 Select
-      +input({
-        type: "select", 
-        name: "guests",
-        values: {
-          1: 1,
-          2: 2,
-          3: 3,
-        }, 
-        placeholder: "How many guests expected?"
-        })
-    +input({type: "subscribe", value: "", placeholder: "Input something"})
+    //- div 
+    //-   h3 Select
+    //-   +input({
+    //-     type: "select", 
+    //-     name: "guests",
+    //-     values: {
+    //-       1: 1,
+    //-       2: 2,
+    //-       3: 3,
+    //-     }, 
+    //-     placeholder: "How many guests expected?"
+    //-     })
+    //- +input({type: "subscribe", value: "", placeholder: "Input something"})
     
     div 
       h3 Checkbox
@@ -51,5 +52,11 @@ html(lang="en")
       h3 Radio
       div(class="radio__wrapper")
         +radio({values: { man: "Мужчина", woman: "Женщина" }, name: "gender"})
+
+    div
+      h3 Checkbox 
+      div
+        +toggle({ name: "extra", label: "Получать спецпредложения" })
+        +toggle({ name: "extraOther", label: "Получать заказы доставкой до двери" })
 
     include includes/body-scripts
