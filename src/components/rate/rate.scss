@@ -1,0 +1,33 @@
+@import "../../assets/styles/variables";
+
+.rate-wrapper {
+  label {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    cursor: pointer;
+    
+    .active {
+      position: absolute;
+    }
+    .inactive {
+      position: absolute;
+      visibility: visible;
+    }
+  }
+
+  input {
+    width: 0;
+    margin: 0;
+    visibility: hidden;
+  }
+  input:checked ~ label .active {
+    visibility: hidden;
+  }
+  input:checked ~ label .inactive {
+    visibility: visible;
+  }
+
+}

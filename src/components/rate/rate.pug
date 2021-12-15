@@ -1,0 +1,11 @@
+mixin rate(options)
+  - const { name, rate } = options;
+
+  div(class = "rate-wrapper")
+    - for (let i = 0; i < 5; i++)
+      label(for = `${name}-${i + 1}`, data-rate = i + 1)
+        span(class = "inactive")
+          include ../../assets/icons/rate.svg
+        span(class = "active")
+          include ../../assets/icons/rate_filled.svg
+      input(type = "radio", name = name, id = `${name}-${i + 1}`, value = i + 1, checked = i + 1 === rate)
