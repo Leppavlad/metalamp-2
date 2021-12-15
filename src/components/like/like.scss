@@ -1,0 +1,48 @@
+@import "../../assets/styles/variables";
+
+.like {
+  cursor: pointer;
+  user-select: none;
+
+  &__box {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 40px;
+    height: 20px;
+    padding-left: 20px;
+    border-radius: 10px;
+    border: 1px solid $dark25;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 0;
+      left: 0;
+      background: no-repeat center;
+      background-image: url('../../assets/icons/like.svg');
+    }
+  }
+
+  input {
+    display: none;
+  }
+  input:checked ~ &__box {
+    border-color: $purple;
+
+    &::before {
+      background-image: url('../../assets/icons/like_filled.svg');
+    }
+
+    & > * {
+      color: $purple;
+    }
+  }
+
+  &__number {
+    font-size: 10px;
+    line-height: 20px;
+  }
+}

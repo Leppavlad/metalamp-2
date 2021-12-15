@@ -4,6 +4,7 @@ include components/checkbox/checkbox
 include components/radio/radio
 include components/toggle/toggle
 include components/rate/rate
+include components/like/like
 
 doctype html
 html(lang="en")
@@ -42,27 +43,32 @@ html(lang="en")
     //-     })
     //- +input({type: "subscribe", value: "", placeholder: "Input something"})
     
+    //- div 
+    //-   h3 Checkbox
+    //-   div(class="checkbox__wrapper")
+    //-     +checkbox({ label: "Allowed to smoke inside", name: "smoking" })
+    //-     +checkbox({ label: "Allowed to drink inside", name: "drinking" })
+    //-     +checkbox({ label: "Allowed to gamble inside", name: "gambling" })
+
+    //- div
+    //-   h3 Radio
+    //-   div(class="radio__wrapper")
+    //-     +radio({values: { man: "Мужчина", woman: "Женщина" }, name: "gender"})
+
+    //- div
+    //-   h3 Checkbox 
+    //-   div
+    //-     +toggle({ name: "extra", label: "Получать спецпредложения" })
+    //-     +toggle({ name: "extraOther", label: "Получать заказы доставкой до двери" })
+
+    //- div 
+    //-   h3 Rate 
+    //-   +rate({ name: "rate1", rate: 4 })
+    //-   +rate({ name: "rate2", rate: 2 })
+
     div 
-      h3 Checkbox
-      div(class="checkbox__wrapper")
-        +checkbox({ label: "Allowed to smoke inside", name: "smoking" })
-        +checkbox({ label: "Allowed to drink inside", name: "drinking" })
-        +checkbox({ label: "Allowed to gamble inside", name: "gambling" })
-
-    div
-      h3 Radio
-      div(class="radio__wrapper")
-        +radio({values: { man: "Мужчина", woman: "Женщина" }, name: "gender"})
-
-    div
-      h3 Checkbox 
-      div
-        +toggle({ name: "extra", label: "Получать спецпредложения" })
-        +toggle({ name: "extraOther", label: "Получать заказы доставкой до двери" })
-
-    div 
-      h3 Rate 
-      +rate({ name: "rate1", rate: 4 })
-      +rate({ name: "rate2", rate: 2 })
+      h3 Like 
+      +like({ amount: 30, })
+      +like({ amount: 10, })
 
     include includes/body-scripts
