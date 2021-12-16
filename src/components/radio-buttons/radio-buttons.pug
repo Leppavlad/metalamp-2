@@ -1,0 +1,15 @@
+mixin radio-buttons(options)
+  -
+    const {
+      name, 
+      values = {
+        man: "Мужчина",
+        woman: "Женщина",
+      },
+    } = options;
+  div(class = "radio-buttons")
+    each text, key in values
+      label() 
+        input(type = "radio", name = name, value = key)
+        span(class = "model")
+        div(class = "label")= text

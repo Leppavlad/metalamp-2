@@ -1,0 +1,13 @@
+mixin subscription(options)
+  - const { name, placeholder, value } = options 
+  form(class = "subscription")
+    div(class = "subscription__wrapper")
+      input(
+        class = "text", 
+        name = name, 
+        placeholder = 
+        placeholder, 
+        value = value
+      )
+      div(class = "subscription__button")
+        include icons/arrow_forward.svg

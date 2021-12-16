@@ -1,24 +1,26 @@
 @import "../../assets/styles/variables";
 
-* + .custom-radio {
-  margin-left: 20px;
-}
-.custom-radio {
-  display: inline-flex;
-  height: 20px;
-  align-items: center;
-  cursor: pointer;
-  user-select: none;
+.radio-buttons {
+  label {
+    display: inline-flex;
+    height: 20px;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+  }
+  * + label {
+    margin-left: 20px;
+  }
 
   input {
     display: none;
   }
 
-  input:checked~&__model::after {
+  input:checked ~ .model::after {
     display: block;
   }
 
-  &__model {
+  .model {
     position: relative;
     display: inline-block;
     width: 20px;

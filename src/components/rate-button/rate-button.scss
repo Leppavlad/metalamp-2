@@ -1,6 +1,6 @@
 @import "../../assets/styles/variables";
 
-.rate-wrapper {
+.rate-button {
   label {
     display: inline-block;
     position: relative;
@@ -29,5 +29,4 @@
   input:checked ~ label .inactive {
     visibility: visible;
   }
-
 }

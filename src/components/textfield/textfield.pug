@@ -1,0 +1,9 @@
+mixin textfield(options)
+  - const { name, value, placeholder } = options;
+  div(class = "textfield")
+    input(
+      type = "text", 
+      name = name, 
+      placeholder = placeholder, 
+      value = value
+      )

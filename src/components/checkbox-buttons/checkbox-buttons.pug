@@ -1,0 +1,9 @@
+mixin checkbox-buttons(...arr)
+  div(class = "checkbox-buttons")
+    each item in arr 
+      - const { label, name } = item;
+      label
+        input(type="checkbox", name = name)
+        div(class = "model")
+          include icons/check.svg
+        div(class = "label")= label

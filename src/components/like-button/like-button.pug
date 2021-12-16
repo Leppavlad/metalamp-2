@@ -1,0 +1,7 @@
+mixin like-button(options)
+  - const { name, amount } = options;
+
+  label(class = "like-button")
+    input(type = "checkbox", name = name || "like")
+    div(class = "like-button__box")
+      div(class = "like-button__number")= amount

@@ -1,12 +1,16 @@
 @import "./variables";
 
-@import url("../../components/button/button.scss");
-@import url("../../components/checkbox/checkbox.scss");
-@import url("../../components/input/input.scss");
-@import url("../../components/radio/radio.scss");
+@import url("../../components/custom-button/custom-button.scss");
+@import url("../../components/checkbox-buttons/checkbox-buttons.scss");
+@import url("../../components/like-button/like-button.scss");
+@import url("../../components/masked-textfield/masked-textfield.scss");
+@import url("../../components/pagination/pagination.scss");
+@import url("../../components/radio-buttons/radio-buttons.scss");
+@import url("../../components/range-slider/range-slider.scss");
+@import url("../../components/rate-button/rate-button.scss");
+@import url("../../components/subscription/subscription.scss");
+@import url("../../components/textfield/textfield.scss");
 @import url("../../components/toggle/toggle.scss");
-@import url("../../components/rate/rate.scss");
-@import url("../../components/like/like.scss");
 
 html {
   font-family: Montserrat, sans-serif;

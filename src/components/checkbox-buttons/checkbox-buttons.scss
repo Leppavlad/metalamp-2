@@ -1,20 +1,22 @@
 @import "../../assets/styles/variables";
 
-.custom-checkbox {
-  display: flex;
-  padding: 5px 0;
-  cursor: pointer;
-  user-select: none;
-
+.checkbox-buttons {
+  label {
+    display: flex;
+    padding: 5px 0;
+    cursor: pointer;
+    user-select: none;
+  }
+  
   input {
     display: none;
   }
 
-  input:checked ~ &__model svg {
+  input:checked ~ .model svg {
     display: block;
   }
 
-  &__model {
+  .model {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -30,7 +32,7 @@
     }
   }
 
-  &__label {
+  .label {
     flex: 1 0 150px;
   }
 }

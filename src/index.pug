@@ -1,10 +1,14 @@
-include components/button/button
-include components/input/input
-include components/checkbox/checkbox
-include components/radio/radio
+include components/checkbox-buttons/checkbox-buttons
+include components/custom-button/custom-button
+include components/like-button/like-button
+include components/masked-textfield/masked-textfield
+include components/pagination/pagination
+include components/radio-buttons/radio-buttons
+include components/range-slider/range-slider
+include components/rate-button/rate-button
+include components/subscription/subscription
+include components/textfield/textfield
 include components/toggle/toggle
-include components/rate/rate
-include components/like/like
 
 doctype html
 html(lang="en")
@@ -12,63 +16,78 @@ html(lang="en")
     include includes/head-content
     title Metalamp
   body 
-    h1 Some title
-    
-    //- div 
-    //-   h3 Buttons
-    //-   +button({text: "Some button", mode: "fill", color: "main"})
-    //-   +button({text: "Some button", mode: "void", color: "main"})
-    //-   +button({text: "Some button", mode: "flat", color: "main"})
-    //-   +button({content: "arrow-left", mode: "fill", color: "main"})
-    //-   +button({content: "arrow-right", mode: "fill", color: "alt"})
-    //-   +button({content: "with-arrow", text: "перейти к оплате", mode: "fill", color: "alt"})
-    //-   +button({content: "with-arrow", text: "перейти к оплате", mode: "flat", color: "main"})
-    //-   +button({content: "with-arrow", text: "перейти к оплате", mode: "void", color: "main"})
+    div(style = { width: "400px", })
+      //- Ready
+      //- div 
+      //-   h3 checkbox-buttons
+      //-   +checkbox-buttons(
+      //-     { label: "Allowed to smoke inside", name: "smoking" },
+      //-     { label: "Allowed to drink inside", name: "drinking" },
+      //-     { label: "Allowed to gamble inside", name: "gambling" },
+      //-     )
 
-    //- div 
-    //-   h3 Input
-    //-   +input({value: "", placeholder: "Input something"})
+      //- Ready
+      //- div 
+      //-   h3 custom-button
+      //-   +custom-button({text: "Some button", mode: "fill", color: "main"})
+      //-   +custom-button({text: "Some button", mode: "void", color: "main"})
+      //-   +custom-button({text: "Some button", mode: "flat", color: "main"})
+      //-   +custom-button({content: "arrow-left", mode: "fill", color: "main"})
+      //-   +custom-button({content: "arrow-right", mode: "fill", color: "alt"})
+      //-   +custom-button({content: "with-arrow", text: "перейти к оплате", mode: "fill", color: "alt"})
+      //-   +custom-button({content: "with-arrow", text: "перейти к оплате", mode: "flat", color: "main"})
+      //-   +custom-button({content: "with-arrow", text: "перейти к оплате", mode: "void", color: "main"})
 
-    //- div 
-    //-   h3 Select
-    //-   +input({
-    //-     type: "select", 
-    //-     name: "guests",
-    //-     values: {
-    //-       1: 1,
-    //-       2: 2,
-    //-       3: 3,
-    //-     }, 
-    //-     placeholder: "How many guests expected?"
-    //-     })
-    //- +input({type: "subscribe", value: "", placeholder: "Input something"})
-    
-    //- div 
-    //-   h3 Checkbox
-    //-   div(class="checkbox__wrapper")
-    //-     +checkbox({ label: "Allowed to smoke inside", name: "smoking" })
-    //-     +checkbox({ label: "Allowed to drink inside", name: "drinking" })
-    //-     +checkbox({ label: "Allowed to gamble inside", name: "gambling" })
+      //- Ready
+      //- div 
+      //-   h3 like-button 
+      //-   +like-button({ amount: 30, })
+      //-   +like-button({ amount: 10, })
 
-    //- div
-    //-   h3 Radio
-    //-   div(class="radio__wrapper")
-    //-     +radio({values: { man: "Мужчина", woman: "Женщина" }, name: "gender"})
+      //- Ready
+      //- div
+      //-   h3 radio-buttons
+      //-   +radio-buttons({values: { man: "Мужчина", woman: "Женщина" }, name: "gender"})
+      //-   +radio-buttons({values: { agree: "Да", disagree: "Нет", refrain: "Эмм..." }, name: "agreement"})
 
-    //- div
-    //-   h3 Checkbox 
-    //-   div
-    //-     +toggle({ name: "extra", label: "Получать спецпредложения" })
-    //-     +toggle({ name: "extraOther", label: "Получать заказы доставкой до двери" })
+      //- div 
+      //-   h3 Range 
+      //-   +range({})
 
-    //- div 
-    //-   h3 Rate 
-    //-   +rate({ name: "rate1", rate: 4 })
-    //-   +rate({ name: "rate2", rate: 2 })
+      //- Ready
+      //- div 
+      //-   h3 rate-button 
+      //-   +rate-button({ name: "rate1", rate: 4 })
+      //-   +rate-button({ name: "rate2", rate: 2 })
 
-    div 
-      h3 Like 
-      +like({ amount: 30, })
-      +like({ amount: 10, })
+      //- div 
+      //-   h3 Select
+      //-   +input({
+      //-     type: "select", 
+      //-     name: "guests",
+      //-     values: {
+      //-       1: 1,
+      //-       2: 2,
+      //-       3: 3,
+      //-     }, 
+      //-     placeholder: "How many guests expected?"
+      //-     })
+
+      //- Ready
+      //- div 
+      //-   h3 subscription
+      //-   +subscription({value: "", placeholder: "Email"})
+      
+      //- Ready
+      //- div 
+      //-   h3 textfield 
+      //-   +textfield({ name: "Email", placeholder: "Email" })
+
+      //- Ready
+      //- div
+      //-   h3 toggle
+      //-   div
+      //-     +toggle({ name: "extra", label: "Получать спецпредложения" })
+      //-     +toggle({ name: "extraOther", label: "Получать заказы доставкой до двери" })
 
     include includes/body-scripts

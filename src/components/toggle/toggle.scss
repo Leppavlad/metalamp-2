@@ -1,10 +1,6 @@
 @import "../../assets/styles/variables";
 
-* + .custom-toggle {
-  margin-top: 14px;
-}
-
-.custom-toggle {
+.toggle {
   display: flex;
   cursor: pointer;
   user-select: none;
@@ -13,13 +9,13 @@
     display: none;
   }
 
-  input:checked ~ &__model::after {
+  input:checked ~ .model::after {
     transform: translateX(20px);
     background-color: $purple;
     transition: transform .3s;
   }
 
-  &__model {
+  .model {
     position: relative;
     width: 40px;
     height: 20px;
@@ -39,7 +35,11 @@
     }
   }
 
-  &__label {
+  .label {
     margin-left: 14px;
   }
+}
+
+.toggle + .toggle {
+  margin-top: 14px;
 }
