@@ -1,0 +1,9 @@
+mixin masked-textfield(options)
+  - const { name, value, placeholder, mask } = options;
+  div(class = "masked-textfield", data-mask = mask)
+    input(
+      type = "text", 
+      name = name, 
+      placeholder = placeholder, 
+      value = value
+      )
