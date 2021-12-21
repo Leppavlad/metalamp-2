@@ -1,0 +1,39 @@
+mixin category(label)
+  div(class = "dropdown__table-data__category")
+    div(class = "dropdown__table-data__category__text")= label
+    div(class = "dropdown__table-data__controls")
+      button(class = "subtract-btn") -
+      span(class = "dropdown__table-data__controls__value") 0
+      button(class = "add-btn") +
+
+mixin dropdown(options)
+  - const { placeholder, type, collapsed = true } = options 
+  div(
+    class = {
+    "dropdown": true,
+    "dropdown_collapsed": collapsed
+    }, 
+    data-type = type
+  ) 
+    div(class = "dropdown__input")
+      input(disabled = true, placeholder = placeholder)
+      div(class = "dropdown__input__button")
+        include icons/expand_more.svg
+    div(class = {
+      "dropdown__table": true,
+      "dropdown__table_edited": false
+    })
+      div(class = "dropdown__table-data")
+        case type
+          when "guests"
+            - const guests = ["взрослые", "дети", "младенцы"]
+            each item in guests
+              +category(item)
+          when "rooms"
+            - const rooms = ["спальни", "кровати", "ванные комнаты"]
+            each item in rooms
+              +category(item)
+
+      div(class = "dropdown__table-controls")
+        button(class = "dropdown__table__clear-button") очистить
+        button(class = "dropdown__table__submit-button") применить

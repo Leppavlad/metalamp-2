@@ -1,5 +1,6 @@
 include components/checkbox-buttons/checkbox-buttons
 include components/custom-button/custom-button
+include components/dropdown/dropdown
 include components/like-button/like-button
 include components/masked-textfield/masked-textfield
 include components/pagination/pagination
@@ -16,7 +17,7 @@ html(lang="en")
     include includes/head-content
     title Metalamp
   body 
-    div(style = { width: "400px", })
+    div(style = { width: "266px", })
       //- Ready
       //- div 
       //-   h3 checkbox-buttons
@@ -38,6 +39,21 @@ html(lang="en")
       //-   +custom-button({content: "with-arrow", text: "перейти к оплате", mode: "flat", color: "main"})
       //-   +custom-button({content: "with-arrow", text: "перейти к оплате", mode: "void", color: "main"})
 
+      div 
+        h3 Dropdown
+        +dropdown({
+          placeholder: "Сколько комнат",
+          type: "rooms",
+          collapsed: false,
+          id: 1
+        })
+        +dropdown({
+          placeholder: "Сколько гостей",
+          type: "guests",
+          collapsed: true,
+          id: 2
+        })
+
       //- Ready
       //- div 
       //-   h3 like-button 
@@ -45,10 +61,10 @@ html(lang="en")
       //-   +like-button({ amount: 10, })
       
       //- Ready
-      div 
-        h3 masked-textfield 
-        +masked-textfield({ name: "date", placeholder: "ДД-ММ-ГГГГ", mask: "dd-mm-yyyy" })
-        +masked-textfield({ name: "date", placeholder: "ДД-ММ-ГГГГ", mask: "dd-mm-yyyy" })
+      //- div 
+      //-   h3 masked-textfield 
+      //-   +masked-textfield({ name: "date", placeholder: "ДД-ММ-ГГГГ", mask: "dd-mm-yyyy" })
+      //-   +masked-textfield({ name: "date", placeholder: "ДД-ММ-ГГГГ", mask: "dd-mm-yyyy" })
 
       //- Ready
       //- div
@@ -65,19 +81,6 @@ html(lang="en")
       //-   h3 rate-button 
       //-   +rate-button({ name: "rate1", rate: 4 })
       //-   +rate-button({ name: "rate2", rate: 2 })
-
-      //- div 
-      //-   h3 Select
-      //-   +input({
-      //-     type: "select", 
-      //-     name: "guests",
-      //-     values: {
-      //-       1: 1,
-      //-       2: 2,
-      //-       3: 3,
-      //-     }, 
-      //-     placeholder: "How many guests expected?"
-      //-     })
 
       //- Ready
       //- div 
