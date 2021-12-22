@@ -1,7 +1,7 @@
-import dropdown from "../../components/dropdown/dropdown";
+import Dropdown from "../../components/dropdown/Dropdown";
 import maskedTextfield from "../../components/masked-textfield/masked-textfield";
 // import subscription from "../../components/subscription/subscription";
 
-dropdown();
+Dropdown.each(".dropdown");
 maskedTextfield();
 // subscription();

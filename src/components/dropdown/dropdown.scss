@@ -15,9 +15,11 @@
       appearance: none;
       outline: none;
       cursor: pointer;
+      transition: .2s;
 
       &:hover {
         border-color: $dark50;
+        transition: .2s;
       }
     }
 
@@ -99,7 +101,7 @@
   }
 
   &__table-controls {
-    display: none;
+    display: flex;
     justify-content: space-between;
     margin-top: 19px;
     
@@ -123,6 +125,10 @@
   &_collapsed &__input {
     input {
       border-color: $dark25;
+
+      &:hover {
+        border-color: $dark50;
+      }
     }
   }
 
@@ -131,9 +137,5 @@
     padding-bottom: 0;
     border-width: 0;
     height: 0px!important;
-  }
-
-  &__table_edited &__table-controls {
-    display: flex;
   }
 }
