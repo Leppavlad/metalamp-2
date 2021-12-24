@@ -1,4 +1,11 @@
 mixin range(options)
-  - const {} = options;
-
-  input(type="range", name="")
+  - const { title, name, currency } = options;
+  div(class = "range-slider", data-range = name, data-currency = currency)
+    div(class = "range-slider__header") 
+      h4(class = "range-slider__title")= title
+      div(class = "range-slider__filter")
+        span(class = "from") 0
+        = ' - '
+        span(class = "to") 0
+    div(class = "range-slider__slider") 
+      div(class = "noUi-slider")

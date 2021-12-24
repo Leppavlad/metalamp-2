@@ -17,7 +17,7 @@ html(lang="en")
     include includes/head-content
     title Metalamp
   body 
-    div(style = { width: "266px", })
+    div(style = { width: "256px"})
       //- Ready
       //- div 
       //-   h3 checkbox-buttons
@@ -73,9 +73,9 @@ html(lang="en")
       //-   +radio-buttons({values: { man: "Мужчина", woman: "Женщина" }, name: "gender"})
       //-   +radio-buttons({values: { agree: "Да", disagree: "Нет", refrain: "Эмм..." }, name: "agreement"})
 
-      //- div 
-      //-   h3 Range 
-      //-   +range({})
+      div 
+        h3 Range 
+        +range({ title: "Range slider", name: "someCosts", currency: "rub" })
 
       //- Ready
       //- div 

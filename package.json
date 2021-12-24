@@ -18,5 +18,8 @@
     "@parcel/transformer-pug": "^2.0.1",
     "@parcel/transformer-sass": "^2.0.1",
     "parcel": "^2.0.1"
+  },
+  "dependencies": {
+    "nouislider": "^15.5.0"
   }
 }
